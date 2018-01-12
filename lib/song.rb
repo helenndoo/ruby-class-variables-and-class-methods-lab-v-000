@@ -32,19 +32,14 @@ class Song
   end
 
   def self.genre_count
-    hash = {}
-    self.genres.each do |genre|
-      count = @@genres.find_all{ |g| g == genre}
-      hash[genre] = count
-    end
-    hash
+    test = Hash.new(0)
+    @@genres.each { |genre| test[genre] +=1 }
+    test
   end
 
   def self.artist_count
-    hash = {}
-    self.artists.each do |artist|
-      count = @@artists.find_all{ |a| a == artist}
-      hash[artist] = count
-    end
+    test = Hash.new(0)
+    @@artists.each { |artist| test[artist] +=1 }
+    test
   end
 end
